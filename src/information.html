@@ -1,165 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library Tailwind</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Library Tailwind</title>
 
-    <link href="/dist/output.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="flex flex-col h-screen">
-      <header>
-        <nav class="bg-rose-800">
-          <div class="mx-auto px-2 max-w-7xl sm:px-6 lg:px-8">
-            <div class="relative h-16 flex items-center justify-between">
-              <div
-                class="absolute flex left-0 sm:hidden items-center inset-y-0 bg-rose-800"
-              >
-                <button
-                  class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                  id="m-menu-button"
-                  type="button"
-                  aria-controls="mobile-menu"
-                  aria-expanded="false"
-                >
-                  <span class="sr-only">Open main menu</span>
-                  <!-- closed menu -->
-                  <svg
-                    class="block h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                  </svg>
-                  <!-- opened menu -->
-                  <svg
-                    class="hidden h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-              >
-                <div class="flex flex-shrink-0 items-center">
-                  <img
-                    class="block h-8 w-auto lg:hidden"
-                    src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg"
-                    alt="RevoU Library"
-                  />
-                  <img
-                    class="block h-8 w-auto lg:block"
-                    src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg"
-                    alt="RevoU Library"
-                  />
+        <link href="./output.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="flex flex-col h-screen">
+            <header>
+                <nav class="bg-rose-800">
+                    <div class="mx-auto px-2 max-w-7xl sm:px-6 lg:px-8">
+                        <div
+                            class="relative h-16 flex items-center justify-between"
+                        >
+                            <div
+                                class="absolute flex left-0 sm:hidden items-center inset-y-0 bg-rose-800"
+                            >
+                                <button
+                                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                                    id="m-menu-button"
+                                    type="button"
+                                    aria-controls="mobile-menu"
+                                    aria-expanded="false"
+                                >
+                                    <span class="sr-only">Open main menu</span>
+                                    <!-- closed menu -->
+                                    <svg
+                                        class="block h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                        />
+                                    </svg>
+                                    <!-- opened menu -->
+                                    <svg
+                                        class="hidden h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="1.5"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div
+                                class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+                            >
+                                <div class="flex flex-shrink-0 items-center">
+                                    <img
+                                        class="block h-8 w-auto lg:hidden"
+                                        src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg"
+                                        alt="RevoU Library"
+                                    />
+                                    <img
+                                        class="block h-8 w-auto lg:block"
+                                        src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg"
+                                        alt="RevoU Library"
+                                    />
+                                </div>
+                                <div class="hidden sm:ml-6 sm:block">
+                                    <div class="flex space-x-4">
+                                        <a
+                                            class="bg-rose-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                            href="index.html"
+                                            aria-current="page"
+                                            >Library</a
+                                        >
+                                        <a
+                                            class="text-gray-300 hover:bg-rose-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                            href="books.html"
+                                            >Books</a
+                                        >
+                                        <a
+                                            class="text-gray-300 hover:bg-rose-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                                            href="information.html"
+                                            >Information</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:hidden hidden" id="m-menu">
+                        <div class="space-y-1 px-2 pt-2 pb-3">
+                            <a
+                                class="bg-rose-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                                href="index.html"
+                                aria-current="page"
+                                >Library</a
+                            >
+                            <a
+                                class="text-gray-300 hover:bg-rose-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                                href="books.html"
+                                >Books</a
+                            >
+                            <a
+                                class="text-gray-300 hover:bg-rose-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                                href="information.html"
+                                >Information</a
+                            >
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main
+                class="flex-1 overflow-y-auto bg-library-3 bg-cover bg-center bg-no-repeat"
+            >
+                <div class="flex flex-col items-center py-3 px-4 sm:px-8">
+                    <div class="container mx-auto my-3 max-w-screen-lg">
+                        <div class="flex flex-row flex-wrap">
+                            <div class="sm:basis-2/3 grow sm:pr-4">
+                                <div
+                                    class="bg-rose-800 rounded-lg p-8 text-white"
+                                >
+                                    <h3 class="text-xl mb-4">
+                                        Library Information
+                                    </h3>
+                                    <div class="mb-4">
+                                        <h4 class="text-lg">
+                                            Contact information
+                                        </h4>
+                                        <b class="text-sm">Address:</b>
+                                        <b class="text-sm">RevoU Library</b>
+                                        <p class="text-sm">
+                                            Go Work Menara Rajawali, Ground
+                                            Floor, Jl. DR. Ide Anak Agung Gde
+                                            Agung, RT.5/RW.2, Kuningan, Jakarta,
+                                            Daerah Khusus Ibukota Jakarta 12950
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg">Opening Hours</h4>
+                                        <b class="text-sm">Monday - Friday</b>
+                                        <p class="text-sm">Open: 10:00 AM</p>
+                                        <p class="text-sm">Close: 04:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="sm:basis-1/3 grow text-white sm:pl-4 mb-4 sm:mb-0"
+                            >
+                                <div
+                                    class="bg-rose-800 rounded-lg p-8 text-white"
+                                >
+                                    <h3 class="text-lg mb-2">Announcement</h3>
+                                    <p class="text-sm text-center">
+                                        No Announcement!!!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hidden sm:ml-6 sm:block">
-                  <div class="flex space-x-4">
-                    <a
-                      class="bg-rose-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                      href="index.html"
-                      aria-current="page"
-                      >Library</a
-                    >
-                    <a
-                      class="text-gray-300 hover:bg-rose-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                      href="books.html"
-                      >Books</a
-                    >
-                    <a
-                      class="text-gray-300 hover:bg-rose-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                      href="information.html"
-                      >Information</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sm:hidden hidden" id="m-menu">
-            <div class="space-y-1 px-2 pt-2 pb-3">
-              <a
-                class="bg-rose-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-                href="index.html"
-                aria-current="page"
-                >Library</a
-              >
-              <a
-                class="text-gray-300 hover:bg-rose-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                href="books.html"
-                >Books</a
-              >
-              <a
-                class="text-gray-300 hover:bg-rose-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-                href="information.html"
-                >Information</a
-              >
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main
-        class="flex-1 overflow-y-auto bg-library-3 bg-cover bg-center bg-no-repeat"
-      >
-        <div class="flex flex-col items-center py-3 px-4 sm:px-8">
-          <div class="container mx-auto my-3 max-w-screen-lg">
-            <div class="flex flex-row flex-wrap">
-              <div class="sm:basis-2/3 grow sm:pr-4">
-                <div class="bg-rose-800 rounded-lg p-8 text-white">
-                  <h3 class="text-xl mb-4">Library Information</h3>
-                  <div class="mb-4">
-                    <h4 class="text-lg">Contact information</h4>
-                    <b class="text-sm">Address:</b>
-                    <b class="text-sm">RevoU Library</b>
-                    <p class="text-sm">
-                      Go Work Menara Rajawali, Ground Floor, Jl. DR. Ide Anak
-                      Agung Gde Agung, RT.5/RW.2, Kuningan, Jakarta, Daerah
-                      Khusus Ibukota Jakarta 12950
-                    </p>
-                  </div>
-                  <div>
-                    <h4 class="text-lg">Opening Hours</h4>
-                    <b class="text-sm">Monday - Friday</b>
-                    <p class="text-sm">Open: 10:00 AM</p>
-                    <p class="text-sm">Close: 04:00 PM</p>
-                  </div>
-                </div>
-              </div>
-              <div class="sm:basis-1/3 grow text-white sm:pl-4 mb-4 sm:mb-0">
-                <div class="bg-rose-800 rounded-lg p-8 text-white">
-                  <h3 class="text-lg mb-2">Announcement</h3>
-                  <p class="text-sm text-center">No Announcement!!!</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </main>
+            <footer class="py-3 bg-rose-800">
+                <p class="text-center text-xs loading-relaxed text-gray-300">
+                    RevoU Library
+                </p>
+            </footer>
         </div>
-      </main>
-      <footer class="py-3 bg-rose-800">
-        <p class="text-center text-xs loading-relaxed text-gray-300">
-          RevoU Library
-        </p>
-      </footer>
-    </div>
-    <script src="app.js"></script>
-  </body>
+        <script src="app.js"></script>
+    </body>
 </html>
