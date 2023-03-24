@@ -15,9 +15,103 @@ function toggleMobileMenu() {
     }
 }
 async function getBooksData() {
-    let response = await fetch('./data.json')
+    let response = await fetch('./src/data.json')
     let json = await response.json()
     return json['books']
+}
+
+function searchLibrary(e) {
+    e.preventDefault()
+
+    const searchQuery = document.getElementById('search').value
+    const searchResult = document.getElementById('search-result')
+
+    if (!searchQuery) {
+        searchResult.classList.add('hidden')
+        return
+    }
+
+    searchResult.classList.remove('hidden')
+    searchResult.innerHTML = ''
+
+    fetch('./data.json')
+        .then((response) => response.json())
+        .then((data) => {
+            const books = data.books.filter((book) => {
+                const { title, authors, subjects } = book
+                const lowercaseSearchQuery = searchQuery.toLowerCase()
+
+                return (
+                    title.toLowerCase().includes(lowercaseSearchQuery) ||
+                    authors
+                        .join(', ')
+                        .toLowerCase()
+                        .includes(lowercaseSearchQuery) ||
+                    subjects
+                        .join(', ')
+                        .toLowerCase()
+                        .includes(lowercaseSearchQuery)
+                )
+            })
+
+            if (books.length === 0) {
+                const noResults = document.createElement('center')
+                const message = document.createElement('h1')
+                message.innerHTML =
+                    'No books found, please try with another keyword'
+                message.className = 'text-gray-400'
+                noResults.appendChild(message)
+                searchResult.appendChild(noResults)
+                return
+            }
+
+            const searchResults = document.createElement('div')
+            searchResults.className = 'my-6'
+
+            books.forEach((book) => {
+                const bookElement = document.createElement('a')
+                bookElement.href = '#'
+                bookElement.className =
+                    'flex flex-col items-center bg-white border border-rose-200 p-4 shadow md:flex-row hover:bg-rose-100 dark:border-rose-700 dark:bg-rose-800 dark:hover:bg-rose-700'
+
+                const bookCover = document.createElement('img')
+                bookCover.src = book.image
+                bookCover.alt = book.title
+                bookCover.className =
+                    'object-cover w-full rounded-lg h-96 md:h-auto md:w-24'
+
+                const bookDetails = document.createElement('div')
+                bookDetails.className =
+                    'flex flex-col justify-between p-4 leading-normal text-gray-200'
+
+                const bookTitle = document.createElement('h5')
+                bookTitle.className = 'mb-2 text-2xl font-bold tracking-tight'
+                bookTitle.innerHTML = book.title
+
+                const bookAuthors = document.createElement('p')
+                bookAuthors.className = 'mb-3 font-normal'
+                const authorLabel = document.createElement('b')
+                authorLabel.innerHTML = 'Author(s): '
+                bookAuthors.appendChild(authorLabel)
+                bookAuthors.appendChild(
+                    document.createTextNode(book.authors.join(', '))
+                )
+
+                const bookSubjects = document.createElement('caption')
+                bookSubjects.innerHTML = book.subjects.join(', ')
+
+                bookDetails.appendChild(bookTitle)
+                bookDetails.appendChild(bookAuthors)
+                bookDetails.appendChild(bookSubjects)
+
+                bookElement.appendChild(bookCover)
+                bookElement.appendChild(bookDetails)
+
+                searchResults.appendChild(bookElement)
+            })
+
+            searchResult.appendChild(searchResults)
+        })
 }
 
 function loadBooks() {
