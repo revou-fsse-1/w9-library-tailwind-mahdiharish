@@ -26,8 +26,26 @@ async function getBooksData() {
     return json['books']
 }
 
-// SEARCH LIBRARY
-
+function previousPage() {
+    let searchString = window.location.search
+    let searchParams = new URLSearchParams(searchString)
+    let pageParam = searchParams.get('page')
+    if (pageParam && pageParam === '2') {
+        window.location.replace('?page=1')
+    } else {
+        window.location.reload()
+    }
+}
+function nextPage() {
+    let searchString = window.location.search
+    let searchParams = new URLSearchParams(searchString)
+    let pageParam = searchParams.get('page')
+    if (pageParam && pageParam === '1') {
+        window.location.replace('?page=2')
+    } else {
+        window.location.reload()
+    }
+}
 /**
  * To get books data, you should make sure that your function is async function
  * and call `getBooksData` function with await.
