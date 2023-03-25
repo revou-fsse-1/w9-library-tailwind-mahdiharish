@@ -20,6 +20,10 @@ async function getBooksData() {
     return json['books']
 }
 
+document
+    .getElementById('search-button')
+    .addEventListener('click', searchLibrary)
+
 function searchLibrary(e) {
     e.preventDefault()
 
